@@ -1,3 +1,4 @@
+# comment
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 source "vsphere-iso" "centos8gen" {
@@ -20,6 +21,7 @@ source "vsphere-iso" "centos8gen" {
     network      = "${var.vsphere-network}"
     network_card = "vmxnet3"
   }
+  
   notes                = "Built with Packer, template for Centos7"
   password             = "${var.vsphere-password}"
   ssh_certificate_file = "~/.ssh/id_rsa"
